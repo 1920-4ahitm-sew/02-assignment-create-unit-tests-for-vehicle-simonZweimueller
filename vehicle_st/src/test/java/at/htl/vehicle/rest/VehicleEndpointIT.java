@@ -42,12 +42,17 @@ public class VehicleEndpointIT {
     }
 
     @Test
-    public void fetchId() {
+    public void fetchVehicleWithId() {
         JsonObject dedicatedVehicle = this.target
                 .path("43")
                 .request(MediaType.APPLICATION_JSON)
                 .get(JsonObject.class);
         assertThat(dedicatedVehicle.getString("brand"),containsString("43"));
         assertThat(dedicatedVehicle.getString("brand"),equalTo("Opel 43"));
+    }
+
+    @Test
+    public void deleteVehicle() {
+
     }
 }
